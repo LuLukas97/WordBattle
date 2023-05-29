@@ -1,7 +1,9 @@
-import { useEffect, useState, React } from "react";
+import { useRef, useEffect, useState, React } from "react";
 import HomePageTiles from "../components/homepageTiles";
 
 const home = () => {
+  const rowRef = useRef(null);
+
   const [handleCategory, setHandleCategory] = useState();
   const [handleRounds, setHandleRounds] = useState();
   const [showLetters, setShowLetters] = useState(false);
@@ -18,6 +20,23 @@ const home = () => {
   const handleStateUpdate = (value) => {
     setStateValue(value);
   };
+  useEffect(() => {
+    const handleFocusChange = (event) => {
+      if (rowRef.current && rowRef.current.contains(event.target)) {
+        rowRef.current.classList.add("focused");
+      } else if (rowRef.current) {
+        rowRef.current.classList.remove("focused");
+      }
+    };
+
+    document.addEventListener("focusin", handleFocusChange);
+    document.addEventListener("focusout", handleFocusChange);
+
+    return () => {
+      document.removeEventListener("focusin", handleFocusChange);
+      document.removeEventListener("focusout", handleFocusChange);
+    };
+  }, []);
 
   return (
     <div>
@@ -30,51 +49,15 @@ const home = () => {
           </div>
         </div>
         <div className="letterDash">
-          <h1 className="introText"> Like Wordle, but with categoriesss!</h1>
+          <h1 className="introText"> Like Wordle, but with categories!</h1>
 
           <h2 className="gameRules"> Start by selecting a category: </h2>
-          <div className="category-flex">
+          <div className="category-flex" ref={rowRef}>
             <HomePageTiles onStateUpdate={handleStateUpdate} />
-            <p>State Value: {stateValue}</p>
-
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Mix")}
-            >
-              Mix
-            </button>
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Random")}
-            >
-              Random
-            </button>
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Food")}
-            >
-              Food
-            </button>
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Tools")}
-            >
-              Tools
-            </button>
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Games")}
-            >
-              Games
-            </button>
-            <button
-              className="category-btn"
-              onClick={() => selectCategory("Objects")}
-            >
-              Objects
-            </button>
           </div>
-          {showLetters && (
+          <p>State Value: {stateValue}</p>
+
+          {stateValue && (
             <div className="cssanimation sequence fadeInBottom">
               <h2> Select amount of letter words: </h2>
               <div className="letterAmount-flex">
@@ -98,10 +81,9 @@ const home = () => {
                 </button>
               </div>
               <h2>
-                Game rules:{" "}
-                <span className="summaryRules">{handleCategory}</span> category
-                with <span className="summaryRules">{handleRounds}</span>{" "}
-                rounds!
+                Game rules: <span className="summaryRules">{stateValue}</span>{" "}
+                category with{" "}
+                <span className="summaryRules">{handleRounds}</span> rounds!
               </h2>
 
               <button className="ready-btn">Ready? Start here! </button>

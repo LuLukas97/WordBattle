@@ -1,7 +1,162 @@
-.wordle-button:focus {
-  animation: flip 0.5s ease forwards;
+.category-flex {
+  border: 1px solid yellow;
+  display: flex;
+  width: 80%;
+}
+.category-flex > button {
+  display: grid;
+  cursor: pointer;
+
+  background-color: #202123;
+
+  grid-template-rows: repeat(1); /* Adjust the number of rows as needed */
 }
 
+/* ------------- Row 3 */
+.box3 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box3:focus {
+  background-color: green;
+}
+.row3 {
+  display: grid;
+
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 5px; /* Adjust the gap between boxes */
+  border: none;
+}
+.row3:focus-within .box3 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+/* ------------- Row 4 */
+.box4 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box4:focus {
+  background-color: green;
+}
+.row4 {
+  display: grid;
+
+  gap: 5px; /* Adjust the gap between boxes */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  border: none;
+}
+.row4:focus-within .box4 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+/* ------------- Row 5 */
+.box5 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box5:focus {
+  background-color: green;
+}
+.row5 {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 5px; /* Adjust the gap between boxes */
+  border: none;
+}
+.row5:focus-within .box5 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+/* ------------- Row 6 */
+.box6 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box6:focus {
+  background-color: green;
+}
+.row6 {
+  display: grid;
+  grid-template-columns: repeat(
+    6,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 5px; /* Adjust the gap between boxes */
+
+  border: none;
+}
+.row6:focus-within .box6 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+/* ------------- Row 7 */
+.box7 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box7:focus {
+  background-color: green;
+}
+.row7 {
+  display: grid;
+  grid-template-columns: repeat(
+    7,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  gap: 5px; /* Adjust the gap between boxes */
+
+  border: none;
+}
+.row7:focus-within .box7 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
 @keyframes flip {
   0% {
     transform: scaleY(1);
@@ -12,30 +167,4 @@
   100% {
     transform: scaleY(1);
   }
-}
-
-.row3 {
-  display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Adjust the number of columns as needed */
-  gap: 10px; /* Adjust the gap between boxes */
-}
-
-.row6 {
-  display: grid;
-  grid-template-columns: repeat(
-    6,
-    1fr
-  ); /* Adjust the number of columns as needed */
-  gap: 10px; /* Adjust the gap between boxes */
-}
-.box {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
