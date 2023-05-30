@@ -53,7 +53,9 @@ const home = () => {
 
           <h2 className="gameRules"> Start by selecting a category: </h2>
           <div className="category-flex" ref={rowRef}>
-            <HomePageTiles onStateUpdate={handleStateUpdate} />
+            <div className="grid-container">
+              <HomePageTiles onStateUpdate={handleStateUpdate} />
+            </div>
           </div>
           <p>State Value: {stateValue}</p>
 
