@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState, React } from "react";
 import HomePageTiles from "../components/homepageTiles";
+import Footer from "../components/footer";
+import Link from "next/link";
 
 const home = () => {
   const rowRef = useRef(null);
@@ -43,8 +45,8 @@ const home = () => {
       <div className="wrapper">
         <div className="headerContainer">
           <div className="headerTitle">
-            <span className="headerLetter">Letter</span>
-            <span className="headerDash">Dash</span>
+            <span className="headerLetter">Wordle</span>
+            <span className="headerDash">Battle</span>
             <div className="dashImg"></div>
           </div>
         </div>
@@ -88,10 +90,18 @@ const home = () => {
                 <span className="summaryRules">{handleRounds}</span> rounds!
               </h2>
 
-              <button className="ready-btn">Ready? Start here! </button>
+              <Link
+                href={{
+                  pathname: "/play",
+                  state: { state1: handleCategory, rounds: handleRounds },
+                }}
+              >
+                <button className="ready-btn">Ready? Start here! </button>
+              </Link>
             </div>
           )}
         </div>
+        <Footer />
       </div>
     </div>
   );

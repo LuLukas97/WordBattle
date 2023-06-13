@@ -6,6 +6,8 @@
   justify-content: center;
 }
 .grid-container {
+  /* border: 1px solid red;
+ */
   height: 100%;
   width: 100%;
 }
@@ -13,7 +15,7 @@
   /* Mix */
 
   grid-column-start: 2;
-  grid-column-end: 1.5;
+  grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 1;
 }
@@ -50,7 +52,7 @@
 }
 .objects .row6 {
   /* Objects */
-  grid-column-start: 1;
+  grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 2;

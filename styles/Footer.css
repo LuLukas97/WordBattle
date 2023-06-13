@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+.footer__wrapper {
+  margin-top: 100px; /* Change this to make footer at bottom */
+  font-size: 24px;
+  font-family: "Roboto Mono", sans-serif;
+  color: white;
+  background-color: rgba(10, 122, 42, 0.2);
+}
+.linebreak {
+  width: 100%;
+
+  text-align: center;
+  border: 1px solid #fff;
+}
+.dashImgFooter {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background: url("../public/dash180.ico") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.flexbox-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexbox-item {
+  margin: 10px;
+}
+.worldeBattleContainer {
+  font-family: "Poppins", sans-serif;
+
+  letter-spacing: 2.2px;
+  text-decoration: none;
+}
+.footerLetter {
+  color: #fff;
+  font-size: 44px;
+}
+.footerDash {
+  color: #a7ff83;
+  font-size: 44px;
+}
+
+.flexbox-item-2 {
+  width: 64px;
+  height: 64px;
+  background: url("../public/edited.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+}
+
+.flexbox-container-legal {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.parent {
+  font-family: "Poppins", sans-serif;
+
+  margin-top: 10px;
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: px;
+  grid-row-gap: 5px;
+}
+
+.div1 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div2 {
+  text-decoration: none;
+  color: white;
+  grid-area: 2 / 2 / 3 / 3;
+}
+.div3 {
+  text-decoration: none;
+  color: white;
+  grid-area: 3 / 2 / 4 / 3;
+}
+.div4 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.div5 {
+  text-decoration: none;
+  color: white;
+  grid-area: 2 / 4 / 3 / 5;
+}
+.div6 {
+  text-decoration: none;
+  color: white;
+  grid-area: 3 / 4 / 4 / 5;
+}
