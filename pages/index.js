@@ -1,9 +1,12 @@
-import { useRef, useEffect, useState, React } from "react";
+import { useRef, useEffect, useState, React, createContext } from "react";
 import HomePageTiles from "../components/homepageTiles";
 import Footer from "../components/footer";
 import Link from "next/link";
+import { boardDefault } from "../data/Words";
+
 
 const home = () => {
+
   const rowRef = useRef(null);
 
   const [handleCategory, setHandleCategory] = useState();
@@ -41,69 +44,70 @@ const home = () => {
   }, []);
 
   return (
-    <div>
-      <div className="wrapper">
-        <div className="headerContainer">
-          <div className="headerTitle">
-            <span className="headerLetter">Wordle</span>
-            <span className="headerDash">Battle</span>
-            <div className="dashImg"></div>
-          </div>
-        </div>
-        <div className="letterDash">
-          <h1 className="introText"> Like Wordle, but with categories!</h1>
 
-          <h2 className="gameRules"> Start by selecting a category: </h2>
-          <div className="category-flex" ref={rowRef}>
-            <div className="grid-container">
-              <HomePageTiles onStateUpdate={handleStateUpdate} />
+      <div>
+        <div className="wrapper">
+          <div className="headerContainer">
+            <div className="headerTitle">
+              <span className="headerLetter">Wordle</span>
+              <span className="headerDash">Battle</span>
+              <div className="dashImg"></div>
             </div>
           </div>
-          <p>State Value: {stateValue}</p>
+          <div className="letterDash">
+            <h1 className="introText"> Like Wordle, but with categories!</h1>
 
-          {stateValue && (
-            <div className="cssanimation sequence fadeInBottom">
-              <h2> Select amount of letter words: </h2>
-              <div className="letterAmount-flex">
-                <button
-                  className="letterAmount-btn"
-                  onClick={() => selectRounds(3)}
-                >
-                  3
-                </button>
-                <button
-                  className="letterAmount-btn"
-                  onClick={() => selectRounds(5)}
-                >
-                  5
-                </button>
-                <button
-                  className="letterAmount-btn"
-                  onClick={() => selectRounds(7)}
-                >
-                  7
-                </button>
+            <h2 className="gameRules"> Start by selecting a category: </h2>
+            <div className="category-flex" ref={rowRef}>
+              <div className="grid-container">
+                <HomePageTiles onStateUpdate={handleStateUpdate} />
               </div>
-              <h2>
-                Game rules: <span className="summaryRules">{stateValue}</span>{" "}
-                category with{" "}
-                <span className="summaryRules">{handleRounds}</span> rounds!
-              </h2>
-
-              <Link
-                href={{
-                  pathname: "/play",
-                  state: { state1: handleCategory, rounds: handleRounds },
-                }}
-              >
-                <button className="ready-btn">Ready? Start here! </button>
-              </Link>
             </div>
-          )}
+            <p>State Value: {stateValue}</p>
+
+            {stateValue && (
+              <div className="cssanimation sequence fadeInBottom">
+                <h2> Select amount of letter words: </h2>
+                <div className="letterAmount-flex">
+                  <button
+                    className="letterAmount-btn"
+                    onClick={() => selectRounds(3)}
+                  >
+                    3
+                  </button>
+                  <button
+                    className="letterAmount-btn"
+                    onClick={() => selectRounds(5)}
+                  >
+                    5
+                  </button>
+                  <button
+                    className="letterAmount-btn"
+                    onClick={() => selectRounds(7)}
+                  >
+                    7
+                  </button>
+                </div>
+                <h2>
+                  Game rules: <span className="summaryRules">{stateValue}</span>{" "}
+                  category with{" "}
+                  <span className="summaryRules">{handleRounds}</span> rounds!
+                </h2>
+
+                <Link
+                  href={{
+                    pathname: "/play",
+                    state: { state1: handleCategory, rounds: handleRounds },
+                  }}
+                >
+                  <button className="ready-btn">Ready? Start here! </button>
+                </Link>
+              </div>
+            )}
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
   );
 };
 

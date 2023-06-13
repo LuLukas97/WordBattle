@@ -1,18 +1,18 @@
-import { useRef, useEffect, useState, React } from "react";
-import Footer from "../components/footer";
+import React from "react";
+import Board from "../components/Board";
+import Keyboard from "../components/Keyboard";
 
-const Play = () => {
-  /*   const [handleCategory, setHandleCategory] = useState();
-  const [handleRounds, setHandleRounds] = useState(); */
-
-  //const category = router?.query?.state?.category;
-
+function play() {
   return (
     <div>
-      <div className="background">Category:</div>
-      <Footer />
+      <div className="background">
+        <div className="game">
+          <Board />
+          <Keyboard />
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default Play;
+export default play;
