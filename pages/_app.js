@@ -4,15 +4,26 @@ import "../styles/Footer.css";
 import "../styles/wordlePlay.css";
 import Board from "../components/Board";
 import Keyboard from "../components/Keyboard";
-import { boardDefault } from "../data/Words";
+import { boardDefault, generateWordSet, wordBank } from "../data/Words";
 
-import { useState, React, createContext } from "react";
+import { useState, React, createContext, useEffect } from "react";
 
 export const AppContext = createContext();
 
 function App({ Component, pageProps }) {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
+  const [wordSet, setWordSet] = useState(new Set());
+/*   const [wordSet, setWordSet] = useState(new Set());
+ */
+  const correctWord = "RIGHT";
+
+  useEffect(() => {
+    generateWordSet().then((words) => {
+/*       setWordSet(words.wordSet); */
+      console.log(words);
+    });
+  }, [])
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
@@ -44,6 +55,7 @@ function App({ Component, pageProps }) {
         onSelectLetter,
         onDelete,
         onEnter,
+        correctWord
       }}
     >
       <Component {...pageProps} />;
