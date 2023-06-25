@@ -8,16 +8,16 @@ export const boardDefault = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
 ];
-
+/* const wordArr = wordBank.split('\n').map((word) => word.trim()).filter(Boolean);
+const wordSet = new Set(wordArr);
+console.log(wordSet); // Set containing unique words from the .txt file */
 
 export const generateWordSet = async () => {
   let wordSet;
-  await fetch(wordBank)
-  .then((response) => response.text())
-  .then((result) => {
+  const wordArr = wordBank.split('\n').map((word) => word.trim()).filter(Boolean);
+  wordSet = new Set(wordArr);
 
-    const wordArr = result.split("\r\n")
-    wordSet = new Set(wordArr);
-    return { wordSet };
-  });
+  wordSet = new Set(wordArr);
+    
+  return { wordSet };
 };
