@@ -3,7 +3,7 @@ import "../styles/HomeTiles.css";
 import "../styles/Footer.css";
 import "../styles/wordlePlay.css";
 import Board from "../components/Board";
-import Keyboard from "../components/Keyboard";
+import KeyBoard from "../components/Keyboard";
 import { boardDefault, generateWordSet } from "../data/Words";
 
 import { useState, React, createContext, useEffect } from "react";
@@ -14,14 +14,19 @@ function App({ Component, pageProps }) {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
   const [wordSet, setWordSet] = useState(new Set());
+  const [disabledLetters, setDisabledLetters] = useState([]);
+  const [correctWord, setCorrectWord] = useState("");
+  const [gameOver, setGameOver] = useState({
+    gameOver: false,
+    guessedWord: false,
+  });
 
-  const correctWord = "RIGHT";
-
-    useEffect(() => {
+  useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-        });
-  }, [])
+      setCorrectWord(words.todaysWord);
+    });
+  }, []);
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
@@ -43,18 +48,25 @@ function App({ Component, pageProps }) {
     if (currAttempt.letterPos !== 5) return;
 
     let currWord = "";
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++) {
       currWord += board[currAttempt.attempt][i];
     }
 
-    if (wordSet.has(currWord.toLowerCase())){
+    if (wordSet.has(currWord.toLowerCase())) {
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
-
     } else {
-      alert("Word not found")
+      alert("Word not found");
+    }
+
+    if (currWord.toLowerCase() === correctWord) {
+      setGameOver({ gameOver: true, guessedWord: true });
+      return;
+    }
+
+    if (currAttempt.attempt === 5) {
+      setGameOver({ gameOver: true, guessedWord: false });
     }
   };
-
 
   return (
     <AppContext.Provider
@@ -66,7 +78,11 @@ function App({ Component, pageProps }) {
         onSelectLetter,
         onDelete,
         onEnter,
-        correctWord
+        correctWord,
+        setDisabledLetters,
+        disabledLetters,
+        setGameOver,
+        gameOver,
       }}
     >
       <Component {...pageProps} />;

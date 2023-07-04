@@ -37,7 +37,7 @@ body {
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid black;
+  /*  border: 1px solid black; */
   display: flex;
   flex-direction: column;
 }
@@ -102,5 +102,8 @@ body {
 }
 
 #error {
+  background-color: #3a393c;
+}
+#disabled {
   background-color: #3a393c;
 }
