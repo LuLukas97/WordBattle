@@ -2,6 +2,7 @@ import "../styles/App.css";
 import "../styles/HomeTiles.css";
 import "../styles/Footer.css";
 import "../styles/wordlePlay.css";
+import "../styles/popup-content.css";
 import Board from "../components/Board";
 import KeyBoard from "../components/Keyboard";
 import { boardDefault, generateWordSet } from "../data/Words";
