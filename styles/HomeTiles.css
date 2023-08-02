@@ -1,35 +1,30 @@
-.category-flex {
+/* .category-flex {
   display: grid;
-  /*   grid-template-columns: 100px 100px 100px;
- */
+
   grid-gap: 10px;
   justify-content: center;
+  border: 1px solid red;
+  width: 100%;
 }
 .grid-container {
-  /* border: 1px solid red;
- */
+  border: 1px solid blue;
+
   height: 100%;
   width: 100%;
 }
 .mix .row3 {
-  /* Mix */
-
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 1;
 }
 .random .row6 {
-  /* Random */
-
   grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 2;
 }
 .food .row4 {
-  /* Food */
-
   grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 2;
@@ -37,21 +32,18 @@
 }
 
 .games .row5 {
-  /* Games */
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 2;
 }
 .tools .row5 {
-  /* Tools  */
   grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 1;
 }
 .objects .row6 {
-  /* Objects */
   grid-column-start: 2;
   grid-column-end: 6;
   grid-row-start: 1;
@@ -60,13 +52,9 @@
 .category-flex > button {
   display: grid;
   cursor: pointer;
-
   background-color: #202123;
-
-  grid-template-rows: repeat(1); /* Adjust the number of rows as needed */
 }
 
-/* ------------- Row 3 */
 .box3 {
   width: 50px;
   height: 50px;
@@ -94,7 +82,7 @@
   animation-fill-mode: both;
   background-color: #5aac39;
 }
-/* ------------- Row 4 */
+
 .box4 {
   width: 50px;
   height: 50px;
@@ -120,7 +108,6 @@
   animation-fill-mode: both;
   background-color: #5aac39;
 }
-/* ------------- Row 5 */
 .box5 {
   width: 50px;
   height: 50px;
@@ -145,7 +132,6 @@
   animation-fill-mode: both;
   background-color: #5aac39;
 }
-/* ------------- "Random" / Row 6 */
 .box6 {
   width: 50px;
   height: 50px;
@@ -172,7 +158,6 @@
   animation-fill-mode: both;
   background-color: #5aac39;
 }
-/* ------------- Row 7 */
 .box7 {
   width: 50px;
   height: 50px;
@@ -190,7 +175,7 @@
   display: grid;
   grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
 
-  gap: 5px; /* Adjust the gap between boxes */
+  gap: 5px;
 
   border: none;
 }
@@ -206,6 +191,176 @@
   50% {
     transform: scaleY(0);
   }
+  100% {
+    transform: scaleY(1);
+  }
+}
+ */
+/* .category-flex > div {
+  display: grid;
+  cursor: pointer;
+  background-color: #202123;
+} */
+.category-flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+
+.box5 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box5:focus {
+  background-color: green;
+}
+.row5 {
+  cursor: pointer;
+  background-color: #202123;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  gap: 5px;
+  border: none;
+}
+.row5:focus-within .box5 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+
+.box3 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box3:focus {
+  background-color: green;
+}
+.row3 {
+  cursor: pointer;
+  background-color: #202123;
+  border: 1px solid blue;
+  display: grid;
+  max-width: 150px;
+  grid-template-columns: 50px 50px 50px;
+
+  gap: 5px;
+  border: none;
+}
+.row3:focus-within .box3 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+
+.box4 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-left: -55px;
+}
+.box4:focus {
+  background-color: green;
+}
+.row4 {
+  cursor: pointer;
+  background-color: #202123;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+
+  gap: 5px;
+  border: none;
+}
+.row4:focus-within .box4 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+
+.box6 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box6:focus {
+  background-color: green;
+}
+.row6 {
+  cursor: pointer;
+  background-color: #202123;
+  display: grid;
+
+  grid-template-columns: 50px 50px 50px 50px 50px 50px;
+
+  gap: 5px;
+
+  border: none;
+}
+.row6:focus-within .box6 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+.box7 {
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box7:focus {
+  background-color: green;
+}
+.row7 {
+  cursor: pointer;
+  background-color: #202123;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
+
+  gap: 5px;
+
+  border: none;
+}
+.row7:focus-within .box7 {
+  animation: flip 0.5s ease forwards;
+  animation-fill-mode: both;
+  background-color: #5aac39;
+}
+@keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+
   100% {
     transform: scaleY(1);
   }

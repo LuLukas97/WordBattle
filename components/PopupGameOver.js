@@ -13,9 +13,14 @@ function PopupGameOver() {
     setIsPopupOpen((prevIsOpen) => !prevIsOpen);
   };
   console.log(isPopupOpen);
+
+  const refreshPage = () => {
+    location.reload();
+    console.log("hej");
+  };
   return (
     <div>
-      <button onClick={togglePopup}> Open popup</button>
+      <button onClick={togglePopup}> Open summary</button>
 
       <Popup open={gameOver.guessedWord && isPopupOpen} onClose={togglePopup}>
         <div className="popup-gameover">
@@ -30,11 +35,13 @@ function PopupGameOver() {
             {gameOver.guessedWord && (
               <h1> You guessed the word in {currAttempt.attempt} attempts </h1>
             )}
-            <Link href={{ pathname: "/" }}>
-              <button className="popup-home-btn"> Home </button>
-            </Link>
-            <button className="popup-play-btn"> Play again </button>
           </div>
+          <Link href={{ pathname: "/" }}>
+            <button className="popup-home-btn"> Home </button>
+          </Link>
+          <button className="popup-play-btn" onClick={refreshPage}>
+            Play again
+          </button>
         </div>
       </Popup>
     </div>

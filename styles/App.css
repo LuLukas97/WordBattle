@@ -33,6 +33,9 @@ body {
   font-family: "Roboto Mono", sans-serif;
   letter-spacing: 0.5px;
 }
+.introText > h2 {
+  font-size: 38px;
+}
 .letterDash {
   height: 50%;
   width: 45%;
