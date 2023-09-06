@@ -11,13 +11,17 @@ import Link from "next/link";
 import { boardDefault } from "../data/Words";
 
 const home = () => {
+
+
+const [stateValue, setStateValue] = useState("Random");
+
+
   const rowRef = useRef(null);
 
   const [handleCategory, setHandleCategory] = useState();
   const [handleRounds, setHandleRounds] = useState();
   const [showLetters, setShowLetters] = useState(false);
-  const [stateValue, setStateValue] = useState("");
-
+  
   const selectCategory = async (id) => {
     setShowLetters(true);
     setHandleCategory(id);
@@ -47,6 +51,23 @@ const home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Get the random container div
+    const randomContainer = document.getElementById("row6");
+
+    // Create a hidden button element
+    const hiddenButton = document.createElement("button");
+    hiddenButton.style.position = "absolute";
+    hiddenButton.style.left = "-9999px"; // Move it off-screen to hide it
+
+    // Append the hidden button to the random container
+    randomContainer.appendChild(hiddenButton);
+
+    // Set focus to the hidden button
+    hiddenButton.focus();
+  }, []);
+  console.log(stateValue, " STATE VALUE");
+
   return (
     <div>
       <div className="wrapper">
@@ -68,7 +89,7 @@ const home = () => {
               {/* Tools */}
               <CategoryTools onStateUpdate={handleStateUpdate} />
             </div>
-            <div className="row6">
+            <div className="row6" id="row6">
               {/* Random */}
               <CategoryRandom onStateUpdate={handleStateUpdate} />
             </div>
@@ -93,9 +114,8 @@ const home = () => {
               <HomePageTiles onStateUpdate={handleStateUpdate} />
             </div> */}
           </div>
-          <p>State Value: {stateValue}</p>
 
-          {stateValue && (
+          {/* {stateValue && (
             <div className="cssanimation sequence fadeInBottom">
               <h2 className="introText"> Select amount of characters: </h2>
               <div className="letterAmount-flex">
@@ -133,7 +153,21 @@ const home = () => {
                 <button className="ready-btn">Ready? Start here! </button>
               </Link>
             </div>
-          )}
+          )} */}
+          <h2>
+            Game rules: <span className="summaryRules">{stateValue}</span>
+          </h2>
+
+          <div className="cssanimation sequence fadeInBottom">
+            <Link
+              href={{
+                pathname: "/play",
+                state1: { stateValue: stateValue },
+              }}
+            >
+              <button className="ready-btn">Ready? Start here! </button>
+            </Link>
+          </div>
         </div>
         <Footer />
       </div>

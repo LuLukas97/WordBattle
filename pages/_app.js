@@ -28,6 +28,7 @@ function App({ Component, pageProps }) {
       setCorrectWord(words.todaysWord);
     });
   }, []);
+ 
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
@@ -86,7 +87,7 @@ function App({ Component, pageProps }) {
         gameOver,
       }}
     >
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </AppContext.Provider>
   );
 }

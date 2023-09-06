@@ -1,4 +1,11 @@
 import wordBank from "./wordle-bank.txt";
+import { useState, React, createContext, useEffect, useContext } from "react";
+
+import { AppContext } from "../pages/_app";
+
+function words() {
+  const { stateValue } = useContext(AppContext);
+}
 
 export const boardDefault = [
   ["", "", "", "", ""],
