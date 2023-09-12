@@ -1,39 +1,28 @@
 import { useEffect, useState, React } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+// import your icons
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
     <footer className="footer__wrapper">
-      <div className="footer_container">
-        <div className="flexbox-container">
-          <div className="flexbox-item flexbox-item-1">
-            <a href="" className="worldeBattleContainer">
-              <span className="footerLetter">Wordle</span>
-              <span className="footerDash">Battle</span>
-              <div className="dashImgFooter"></div>
-            </a>
-          </div>
-          <button className="flexbox-item flexbox-item-2"></button>
-        </div>
-
-        {/* Not needed, can maybe bring back in the future? */}
-        {/*         <div className="linebreak"></div>
-
+      <div class="footer">
         <div class="parent">
-          <div className="div1"> RESOURCES</div>
-          <a href="" className="div2">
-            FAQ
+          <div></div>
+          <a href="#">
+            <h2>LinkedIn</h2>
           </a>
-          <a href="" className="div3">
-            Settings
+          <a href="#">
+            <h2>Github</h2>
           </a>
-          <div className="div4"> LEGAL</div>
-          <a href="" className="div5">
-            Privacy Policy
+          <a href="#">
+            <h2>Portfolio</h2>
           </a>
-          <a href="" className="div6">
-            Terms & Conditions
-          </a>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

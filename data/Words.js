@@ -2,10 +2,7 @@ import wordBank from "./wordle-bank.txt";
 import { useState, React, createContext, useEffect, useContext } from "react";
 
 import { AppContext } from "../pages/_app";
-
-function words() {
-  const { stateValue } = useContext(AppContext);
-}
+import { StateContext } from "../pages/_app";
 
 export const boardDefault = [
   ["", "", "", "", ""],
@@ -15,9 +12,6 @@ export const boardDefault = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
 ];
-/* const wordArr = wordBank.split('\n').map((word) => word.trim()).filter(Boolean);
-const wordSet = new Set(wordArr);
-console.log(wordSet); // Set containing unique words from the .txt file */
 
 export const generateWordSet = async () => {
   let wordSet;

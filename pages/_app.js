@@ -6,12 +6,15 @@ import "../styles/popup-content.css";
 import Board from "../components/Board";
 import KeyBoard from "../components/Keyboard";
 import { boardDefault, generateWordSet } from "../data/Words";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { useState, React, createContext, useEffect } from "react";
 
 export const AppContext = createContext();
 
 function App({ Component, pageProps }) {
+  const [appState, setAppState] = useState({});
+
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
   const [wordSet, setWordSet] = useState(new Set());
@@ -27,8 +30,7 @@ function App({ Component, pageProps }) {
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
-  }, []);
- 
+  }, [appState]);
 
   const onSelectLetter = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
@@ -73,6 +75,8 @@ function App({ Component, pageProps }) {
   return (
     <AppContext.Provider
       value={{
+        appState,
+        setAppState,
         board,
         setBoard,
         currAttempt,
