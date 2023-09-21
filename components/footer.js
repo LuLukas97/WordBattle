@@ -12,16 +12,21 @@ const Footer = () => {
     <footer className="footer__wrapper">
       <div class="footer">
         <div class="parent">
-          <div></div>
-          <a href="#">
-            <h2>LinkedIn</h2>
-          </a>
-          <a href="#">
-            <h2>Github</h2>
-          </a>
-          <a href="#">
-            <h2>Portfolio</h2>
-          </a>
+          <div>
+            <a href="https://www.linkedin.com/in/lukas-lundblad/">
+              <h2 className="footer_socials">LinkedIn</h2>
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/LuLukas97">
+              <h2 className="footer_socials">Github</h2>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <h2 className="footer_socials">Portfolio</h2>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
