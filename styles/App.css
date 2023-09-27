@@ -87,6 +87,7 @@ button:active {
   transform: scale(0.96);
 }
 .ready-btn {
+  font-family: "Poppins", sans-serif;
   background-color: #875c74;
   color: white;
   font-weight: 700;
@@ -99,6 +100,9 @@ button:active {
   font-size: 34px;
   cursor: pointer;
   border-radius: 1%;
+}
+.ready-btn:focus {
+  color: white;
 }
 
 .letterAmount-flex {

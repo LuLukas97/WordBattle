@@ -22,11 +22,11 @@ const home = () => {
   const { setAppState } = useContext(AppContext);
   const [stateValue, setStateValue] = useState("Random");
 
-  useEffect(() => {
+  /*  useEffect(() => {
     console.log("useEffect", stateValue);
 
     setAppState(stateValue);
-  });
+  }); */
 
   const rowRef = useRef(null);
 
@@ -41,6 +41,7 @@ const home = () => {
   const selectRounds = async (id) => {
     setHandleRounds(id);
   };
+  
 
   const handleStateUpdate = (value) => {
     setStateValue(value);
@@ -62,22 +63,6 @@ const home = () => {
       document.removeEventListener("focusout", handleFocusChange);
     };
   }, []);
-
-  /*   useEffect(() => {
-    // Get the random container div
-    const randomContainer = document.getElementById("row6");
-
-    // Create a hidden button element
-    const hiddenButton = document.createElement("button");
-    hiddenButton.style.position = "absolute";
-    hiddenButton.style.left = "-9999px"; // Move it off-screen to hide it
-
-    // Append the hidden button to the random container
-    randomContainer.appendChild(hiddenButton);
-
-    // Set focus to the hidden button
-    hiddenButton.focus();
-  }, []); */
 
   return (
     <div>

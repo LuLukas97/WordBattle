@@ -13,35 +13,99 @@
   border: 1px solid white;
 }
 .popup-info {
-  /* border: 1px solid red; */
-  width: 80%;
+  /*   border: 1px solid red; */
+  width: 90%;
   margin: auto;
   color: white;
   font-family: "Inter", sans-serif;
 }
+.summary {
+  font-family: "Poppins", sans-serif;
+  background-color: #875c74;
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  letter-spacing: 2.2px;
+  height: 80px;
+  border: none;
+  margin: 10px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 1%;
+}
+.summary:focus {
+  color: white;
+}
 
 .popup-info > h2 {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .popup-info > h1 {
+  font-weight: 100;
   margin-bottom: 10%;
 }
 
 .popup-home-btn {
-  width: 35%;
+  /*   width: 35%;
   height: 10%;
   font-size: 32px;
-  margin-right: 5%;
+  margin-right: 5%; */
+  font-family: "Poppins", sans-serif;
+  background-color: #875c74;
+  color: white;
+  font-weight: 700;
+  width: 40%;
+  letter-spacing: 2.2px;
+  height: 80px;
+  border: none;
+  margin: 10px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 1%;
+}
+.popup-home-btn:focus {
+  color: white;
+}
+.correctText {
+  font-size: 32px;
+  margin: auto;
+}
+.correctWord {
+  font-size: 32px;
+  width: 80%;
+  margin: auto;
+  font-weight: 700;
+  color: green;
+  font-family: "Inter", sans-serif;
 }
 
 .popup-play-btn {
-  margin-left: 5%;
+  /*   margin-left: 5%;
   width: 35%;
-  margin-top: 110px;
+  margin-top: 70px;
   height: 10%;
   font-size: 32px;
+  white-space: nowrap; */
+  font-family: "Poppins", sans-serif;
+  background-color: #875c74;
+  color: white;
+  font-weight: 700;
+  width: 40%;
+  letter-spacing: 2.2px;
+  height: 80px;
+  border: none;
+  margin: 10px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 1%;
   white-space: nowrap;
+}
+.popup-play-btn:focus {
+  color: white;
 }
 a {
   width: 0px;

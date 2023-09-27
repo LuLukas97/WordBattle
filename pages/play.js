@@ -8,6 +8,7 @@ import { AppContext } from "../pages/_app";
 function play() {
   const { gameOver, currAttempt, setGameOver, correctWord } =
     useContext(AppContext);
+
   return (
     <div>
       <div className="background">
