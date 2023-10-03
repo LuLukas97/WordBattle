@@ -18,7 +18,10 @@ function PopupGameOver() {
   };
   return (
     <div>
-      <button className="summary" onClick={togglePopup}> Open summary</button>
+      <button className="summary" onClick={togglePopup}>
+        {" "}
+        Open summary
+      </button>
 
       <Popup open={gameOver.guessedWord && isPopupOpen} onClose={togglePopup}>
         <div className="popup-gameover">

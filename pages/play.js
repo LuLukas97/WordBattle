@@ -5,7 +5,7 @@ import Keyboard from "../components/Keyboard";
 import GameOver from "../components/GameOver";
 import { AppContext } from "../pages/_app";
 
-function play() {
+function Play() {
   const { gameOver, currAttempt, setGameOver, correctWord } =
     useContext(AppContext);
 
@@ -25,4 +25,4 @@ function play() {
   );
 }
 
-export default play;
+export default Play;

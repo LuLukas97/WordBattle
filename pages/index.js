@@ -6,63 +6,14 @@ import {
   createContext,
   useContext,
 } from "react";
-import HomePageTiles from "../components/homepageTiles";
-import CategoryTools from "../components/categoryTiles/categoryTools";
-import CategoryFood from "../components/categoryTiles/categoryFood";
-import CategoryRandom from "../components/categoryTiles/categoryRandom";
-import CategoryGames from "../components/categoryTiles/categoryGames";
-import CategoryMix from "../components/categoryTiles/categoryMix";
-import CategoryObjects from "../components/categoryTiles/categoryObjects";
+
 import Footer from "../components/footer";
 import Link from "next/link";
 import { AppContext } from "./_app";
 import { boardDefault } from "../data/Words";
 
-const home = () => {
-  const { setAppState } = useContext(AppContext);
-  const [stateValue, setStateValue] = useState("Random");
-
-  /*  useEffect(() => {
-    console.log("useEffect", stateValue);
-
-    setAppState(stateValue);
-  }); */
-
+const Home = () => {
   const rowRef = useRef(null);
-
-  const [handleCategory, setHandleCategory] = useState();
-  const [handleRounds, setHandleRounds] = useState();
-  const [showLetters, setShowLetters] = useState(false);
-
-  const selectCategory = async (id) => {
-    setShowLetters(true);
-    setHandleCategory(id);
-  };
-  const selectRounds = async (id) => {
-    setHandleRounds(id);
-  };
-  
-
-  const handleStateUpdate = (value) => {
-    setStateValue(value);
-  };
-  useEffect(() => {
-    const handleFocusChange = (event) => {
-      if (rowRef.current && rowRef.current.contains(event.target)) {
-        rowRef.current.classList.add("focused");
-      } else if (rowRef.current) {
-        rowRef.current.classList.remove("focused");
-      }
-    };
-
-    document.addEventListener("focusin", handleFocusChange);
-    document.addEventListener("focusout", handleFocusChange);
-
-    return () => {
-      document.removeEventListener("focusin", handleFocusChange);
-      document.removeEventListener("focusout", handleFocusChange);
-    };
-  }, []);
 
   return (
     <div>
@@ -119,4 +70,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
