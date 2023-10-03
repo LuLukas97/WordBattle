@@ -6,13 +6,10 @@ module.exports = {
     });
     return config;
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  nextConfig: {
-    distDir: "build",
-  },
 };
+/* typescript: {
+  ignoreBuildErrors: true,
+},
+eslint: {
+  ignoreDuringBuilds: true,
+}, */
