@@ -1,14 +1,13 @@
-
 .footer__wrapper {
   width: 100%;
   background-color: #202123;
   position: sticky;
 }
 .footer {
-  height: 80px;
+  height: 12vh;
   background-color: rgba(10, 122, 42, 0.2);
 
-  padding: 30px 0px;
+  /*   padding: 30px 0px; */
   font-family: "Play", sans-serif;
   color: #fff;
 }

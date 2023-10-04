@@ -34,7 +34,7 @@ html {
 .introText {
   color: #fff;
   text-align: center;
-  font-size: 42px;
+  font-size: 32px;
 
   font-family: "Poppins", sans-serif;
 
@@ -144,7 +144,7 @@ button:active {
 }
 .headerDash {
   color: #a7ff83;
-  font-size: 84px;
+  font-size: 64px;
 }
 
 .summaryRules {
@@ -152,7 +152,7 @@ button:active {
 }
 .headerLetter {
   color: #fff;
-  font-size: 84px;
+  font-size: 64px;
 }
 
 .cssanimation,
