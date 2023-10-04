@@ -6,7 +6,6 @@ import {
   createContext,
   useContext,
 } from "react";
-
 import Footer from "../components/footer";
 import Link from "next/link";
 import { AppContext } from "./_app";

@@ -6,12 +6,6 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
 app
   .prepare()
   .then(() => {

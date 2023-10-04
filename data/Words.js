@@ -22,7 +22,7 @@ export const generateWordSet = async () => {
     .filter(Boolean);
   todaysWord = wordArr[Math.floor(Math.random() * wordArr.length)];
   wordSet = new Set(wordArr);
-/*   console.log(todaysWord, " TODAYS"); // TO CHECK CURRENT WORD, REMOVE AFTERWARDS
- */
+  console.log(todaysWord, " TODAYS"); // TO CHECK CURRENT WORD, REMOVE AFTERWARDS
+
   return { wordSet, todaysWord };
 };
