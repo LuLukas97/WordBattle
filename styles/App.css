@@ -140,7 +140,7 @@ button:active {
   width: 184px;
   height: 184px;
   background-repeat: no-repeat;
-  background: url("../public/dash180.ico") no-repeat;
+  background: url("../public/dash180.png") no-repeat;
 }
 .headerDash {
   color: #a7ff83;
