@@ -23,7 +23,7 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <a href="#">
+            <a href="https://lukaslundblad.vercel.app/">
               <h2 className="footer_socials">Portfolio</h2>
             </a>
           </div>
