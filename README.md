@@ -5,5 +5,3 @@
 Guess the random 5 letter word and beat your previous score!
 
 Fully playable, [click here](https://wordbattles.vercel.app/)
-
-### Check out my portfolio [here](https://lukaslundblad.vercel.app/)
